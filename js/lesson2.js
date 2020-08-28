@@ -1,49 +1,37 @@
 //FIRST TASK
 
 {
-  let firstNum = +prompt('Write first num?', 0)
-  let secondNum = +prompt('Write second num', 0)
-  let digit = prompt('Write digit?')
+  let firstNum = +prompt('Write first num?', 0);
+  let secondNum = +prompt('Write second num', 0);
+  let digit = prompt('Write digit?');
 
-  let result;
-
-  if (typeof(firstNum) !== 'number' || typeof(secondNum) !== 'number') {
-    result = 'error'
-    alert(result)
-  }
 
   switch (digit) {
     case '+': {
-      result = firstNum + secondNum
-      alert(result)
-    };
-    break;
-    case '-': {
-      result = firstNum - secondNum
-      alert(result)
-    };
-    break;
-    case '*': {
-      result = firstNum * secondNum
-      alert(result)
-    };
-    break;
-    case '/': {
-      result = firstNum / secondNum
-      alert(result)
-    };
-    break;
-  }
-
-  switch (false) {
-    case typeof(firstNum) !== 'number':
-    case typeof(secondNum) !== 'number': 
-    case firstNum === '':
-    case secondNum === '':
-    case digit === '': {
-      result = 'error'
-      alert(result)
+      alert(firstNum + secondNum);
     }
+    break;
+
+    case '-': {
+      alert(firstNum - secondNum);
+    };
+    break;
+
+    case '*': {
+      alert(firstNum * secondNum);
+    };
+    break;
+
+    case '/': {
+      alert(firstNum / secondNum);
+    };
+    break;
+
+    case '':
+    case null: {
+      alert('error')
+    }
+    break;
   }
 }
 
@@ -52,12 +40,14 @@
 
 
 {
-  let num = +prompt('Write a number?', 0)
-
+  let num = prompt('Write a number?', 0);
   let result = 0;
 
-  for (let i = 0; i < num; i++) {
-    if (num <= 10) continue;
+  for (let i = 0; i <= num; i++) {
+    if (num <= 10) {
+      alert('error');
+      break;
+    }
     result += i;
   }
   alert(result)
@@ -69,16 +59,18 @@
 
 {
   function check(n) {
-    if(typeof(n) === 'number') {
-      return 1
+    if (typeof(n) === 'number') {
+      return 1;
     } else if (typeof(n) === 'string') {
-      return 0
-    } else return -1
+      return 0;
+    } else {
+      return -1;
+    } 
   }
   
-  console.log(check(1))
-  console.log(check('Hello'))
-  console.log(check(null))
+  console.log(check(1));
+  console.log(check('Hello'));
+  console.log(check(null));
 }
 
 
@@ -106,11 +98,13 @@
 {
   function substringExists(str, substr) {
     if (str.indexOf(substr) != -1) {
-      return true
-    } else return false
+      return true;
+    } else {
+      return false;
+    } 
   }
   
-  console.log(substringExists('Я люблю круассаны' ,'люблю'))
-  console.log(substringExists('Он кушает мороженное' ,'хлеб'))
+  console.log(substringExists('Я люблю круассаны' ,'люблю'));
+  console.log(substringExists('Он кушает мороженное' ,'хлеб'));
 }
 
