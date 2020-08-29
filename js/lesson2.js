@@ -1,10 +1,13 @@
 //FIRST TASK
 
 {
-  let firstNum = +prompt('Write first num?', 0);
+  let firstNum = +prompt('Write first num', 0);
   let secondNum = +prompt('Write second num', 0);
-  let digit = prompt('Write digit?');
+  let digit = prompt('Write digit');
 
+  if (isNaN(firstNum) || isNaN(secondNum)) {
+    alert('error');
+  }
 
   switch (digit) {
     case '+': {
@@ -29,9 +32,12 @@
 
     case '':
     case null: {
-      alert('error')
+      alert('error');
     }
     break;
+    default: {
+      alert('error');
+    }
   }
 }
 
@@ -43,19 +49,19 @@
   let num = prompt('Write a number?', 0);
   let result = 0;
 
-  for (let i = 0; i <= num; i++) {
-    if (num <= 10) {
-      alert('error');
-      break;
+  if (num == null) {
+    alert('error');
+  } else if (num <= 10) {
+    alert('num < 10');
+  } else {
+    for (let i = 0; i <= num; i++) {
+      result += i;
     }
-    result += i;
+    alert(result);
   }
-  alert(result)
 }
 
-
 // THIRD TASK
-
 
 {
   function check(n) {
@@ -78,6 +84,7 @@
 
 
 {
+
   const COLOR = 'green'
   let count = 0;
 
@@ -86,11 +93,13 @@
     if (divine === COLOR) {
       alert('You win!')
       break;
-    } else if (count === 2) {
-      alert('Good luck for the next time')
-    } else alert('Try again')
-      count++;
+    } else if (count == 3) {
+      alert('Try again later');
+      break;
+    }
+    count++;
   }
+
 }
 
 
