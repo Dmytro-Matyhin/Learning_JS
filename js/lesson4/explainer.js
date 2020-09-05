@@ -34,7 +34,10 @@ function getRidNegativeValues(arr) {
 function replaceNumberToObject(arr, index) {
   
   if (typeof(arr[index]) === 'number') {
-    arr[index] = new Number(arr[index]);
+    arr[index] = {
+      type: 'number',
+      value: arr[index],
+    };
   }
 
   return arr[index];
@@ -44,7 +47,10 @@ function replaceNumberToObject(arr, index) {
 function replaceBooleanToObject(arr, index) {
 
   if (typeof(arr[index]) === 'boolean') {
-    arr[index] = new Boolean(arr[index]);
+    arr[index] = {
+      type: 'boolean',
+      value: arr[index],
+    };
   }
 
   return arr[index];
@@ -54,7 +60,11 @@ function replaceBooleanToObject(arr, index) {
 function replaceStringToObject(arr, index) {
   
   if (typeof(arr[index]) === 'string') {
-    arr[index] = new String(arr[index]);
+    arr[index] = {
+      type: 'string',
+      value: arr[index],
+      length: arr[index].length,
+    };
   }
 
   return arr[index];
