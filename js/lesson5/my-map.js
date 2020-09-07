@@ -1,7 +1,16 @@
 let array = [4, 9, 16, 25, 36, 49, 64, 81];
-let result = [];
 
-myMap = (item) => Math.sqrt(item);
+function myMap(arr, callback) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(callback(arr[i]));
+  }
+  return result;
+}
 
-result = array.map(myMap);
-console.log(result);
+let mapedArray = myMap(array, function (item) {
+  return item * 2;
+})
+
+console.log(mapedArray);
+console.log(array);
