@@ -1,3 +1,3 @@
-filterUpperCase = str => [].filter.call(str, item => item == item.toUpperCase() ? item : item.slice(1));
+filterUpperCase = str => [].filter.call(str, item => item == item.toUpperCase());
 
 console.log(filterUpperCase('HelLo'));
