@@ -15,7 +15,6 @@ Student.prototype.maxMark = function() {
   return Math.max.apply(null, this.marks);
 }
 
-
 randomIntFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
