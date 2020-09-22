@@ -35,11 +35,11 @@ Student.prototype = Object.assign(Student.prototype, {
   },
   
   minMark() {
-    return this.marks.sort((a, b) => b - a)[marks.length - 1];
+    return this.marks.sort((a, b) => b - a)[this.marks.length - 1];
   },
 
   maxMark() {
-    return this.marks.sort((a, b) => a - b)[marks.length - 1];
+    return this.marks.sort((a, b) => a - b)[this.marks.length - 1];
   },
 
   getFullName() {
@@ -149,3 +149,6 @@ let secTeacher = new Teacher({
 // console.log(human);
 // console.log(student);
 // console.log(secTeacher);
+console.log(student.averageMark())
+console.log(student.minMark())
+console.log(student.maxMark())
