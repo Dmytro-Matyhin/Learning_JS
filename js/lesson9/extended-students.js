@@ -20,9 +20,8 @@ Human.prototype = Object.assign(Human.prototype, {
   },
 
   setFullName(fullName) {
-    fullName.split(' '),
-    fullName[0] = this.name, 
-    fullName[1] = this.surname;
+    fullName = fullName.split(' ');
+    this.name = fullName[0], this.surname = fullName[1];
   }
 })
 
@@ -52,10 +51,7 @@ Teacher.prototype.constructor = Teacher;
 
 Teacher.prototype = Object.assign(Teacher.prototype, {
   getListOfNamesByAverageMark() {
-    let result = [];
-    this.group.sort((a, b) => b.averageMark() - a.averageMark());
-    this.group.forEach(item => result.push(item.name));
-    return result;
+    return this.group.sort((a, b) => b.averageMark() - a.averageMark()).map(item => item.name);
   },
 
   getStudentByName(name) {
@@ -68,7 +64,7 @@ Teacher.prototype = Object.assign(Teacher.prototype, {
   },
 
   updateStudentByName(student, name) {
-    this.removeStudentByName(name), this.group.push(new Student(student));
+  this.group.splice(this.group.indexOf(this.getStudentByName(name)), 1,  new Student(student));
   }
 })
 
@@ -122,7 +118,7 @@ let teacher = new Teacher({
 //   surname: 'Circle', 
 //   age: 40, 
 //   marks:[9, 8, 4, 10, 3]}, 
-//   'Vlad'));
+//   'Anton'));
 
 // console.log(teacher);
 
@@ -147,8 +143,9 @@ let secTeacher = new Teacher({
 })
 
 // console.log(human);
-// console.log(student);
+// console.log(student.setFullName('Sheldon Cooper'));
+// console.log(student)
 // console.log(secTeacher);
-console.log(student.averageMark())
-console.log(student.minMark())
-console.log(student.maxMark())
+// console.log(student.averageMark())
+// console.log(student.minMark())
+// console.log(student.maxMark())
