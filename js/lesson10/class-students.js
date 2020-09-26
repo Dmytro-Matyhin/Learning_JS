@@ -1,8 +1,8 @@
 class Human {
-  constructor(config) {
-    this.name = config.name,
-    this.surname = config.surname,
-    this.age = config.age;
+  constructor({name, surname, age}) {
+    this.name = name,
+    this.surname = surname,
+    this.age = age;
   }
   getFullName() {
     return `${this.name} ${this.surname}`;
@@ -16,9 +16,9 @@ class Human {
 }
 
 class Student extends Human {
-  constructor(config) {
-    super(config);
-    this.marks = config.marks;
+  constructor({name, surname, age, marks}) {
+    super({name, surname, age});
+    this.marks = marks;
   }
 
   averageMark() {
@@ -39,9 +39,9 @@ class Student extends Human {
 }
 
 class Teacher extends Human {
-  constructor(config) {
-    super(config);
-    this.group = config.group;
+  constructor({name, surname, age, group}) {
+    super({name, surname, age});
+    this.group = group;
   }
   
   getListOfNamesByAverageMark() {
@@ -102,17 +102,17 @@ let teacher = new Teacher({
   group,
 });
 
-// console.log(teacher.getListOfNamesByAverageMark())
-// console.log(teacher.getStudentByName('Dima'))
-// console.log(teacher.removeStudentByName('Anton'));
-// console.log(teacher);
-// console.log(teacher.updateStudentByName(new Student({
-//   name: 'Misha', 
-//   surname: 'Circle', 
-//   age: 40, 
-//   marks:[9, 8, 4, 10, 3]
-// }),'Artem' ));
-// console.log(teacher);
+console.log(teacher.getListOfNamesByAverageMark())
+console.log(teacher.getStudentByName('Dima'))
+console.log(teacher.removeStudentByName('Anton'));
+console.log(teacher);
+console.log(teacher.updateStudentByName(new Student({
+  name: 'Misha', 
+  surname: 'Circle', 
+  age: 40, 
+  marks:[9, 8, 4, 10, 3]
+}),'Artem' ));
+console.log(teacher);
 
 
 //------------------------------------------------//
