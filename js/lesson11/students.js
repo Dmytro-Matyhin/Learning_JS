@@ -111,7 +111,8 @@ function init() {
 
   updateList.onclick = function(event) {
     event.preventDefault();
+    let list = document.querySelector('#list');
     let result = teacher.getListByAverageMark().join('')
-    ol.innerHTML = result;
+    list.innerHTML = result;
   }
 }
