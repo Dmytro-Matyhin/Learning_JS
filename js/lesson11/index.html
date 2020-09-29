@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css" />
+  <title>Students</title>
+</head>
+<body>
+  <div class="row">
+    <div class="width-1-2">
+      <div class="container">
+        <form id="form" class="form">
+          <div class="row">
+            <div class="column width-1-2">
+              <label for="student-name" class="label">Student name</label>
+              <input type="text" placeholder="Student Name" id="student-name" class="input">
+            </div>
+            <div class="column width-1-2">
+              <label for="student-surname" class="label">Student surname</label>
+              <input type="text" placeholder="Student Surname" id="student-surname" class="input">
+            </div>
+            <div class="column width-1-2">
+              <div class="form-control">
+                <label for="student-age" class="label">Student age</label>
+                <input type="text" placeholder="Student Age" id="student-age" class="input">
+              </div>
+            </div>
+            <div class="column width-1-2">
+              <div class="form-control">
+                <label for="student-marks" class="label">Student marks</label>
+                <input type="text" placeholder="Student Marks" id="student-marks" class="input">
+              </div>
+            </div>
+          </div>
+          <button class="button button-success" id="add-student">ADD STUDENT</button>
+        </form>
+      </div>
+    </div>
+    <div class="width-1-2">
+      <div class="container">
+        <div class="list-block">
+          <ol class="list" id="ol"></ol>
+          <button class="button button-update" id="update-list">UPDATE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="students.js"></script>
+</body>
+</html>
